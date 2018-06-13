@@ -4,62 +4,10 @@
   {{ parent() }} - Home
 {% endblock %}
 
-{% block content %}  
-<!-- Section Random Films -->   
-      <div class="container ptb-50">
-        <div class="section">
-          <div class="row">
-            <h2 class="center grey-text text-darken-4 pb-60 separator">Films</h2>
-            {% for film in randomFilms %}
-              <div class="col s12 m4">
-                <div class="card hoverable">
-                  <div class="card-image">
-                    <img class="h-500" src="{{ film.image_FILMS }}" alt="{{ film.titre_FILMS }}">     
-                  </div>
-                  <h3 class="card-title pl-24">{{ film.titre_FILMS }}</h3>
-                  <div class="card-action">
-                    <a class="blue-text text-darken-2" href="film/{{ film.id_FILMS }}">Descriptif du film</a>
-                  </div>
-                </div>
-              </div>
-            {% endfor %} 
-          </div>
-        </div>
-      </div>
-    
-      <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-          <div class="container">
-            <div class="row center">
-              <h5 class="header col s12 raleway italic bold amber-text fs-30 line-h60">Proposer vos films bientôt sur la rubrique ''Ajouter un film''</h5>
-            </div>
-          </div>
-          </div>
-        <div class="parallax"><img src="img/bobine.jpg" alt="Genre films"></div>
-      </div>
-    
-      <div class="container ptb-50">
-        <div class="section">
-          <div class="row">
-            <div class="col s12 center">
-              <h2 class="grey-text text-darken-4 pb-60 separator">Contact</h2>
-              <p class="justify-align light fs-20">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque id nunc nec volutpat. Etiam pellentesque tristique arcu, non consequat magna fermentum ac. Cras ut ultricies eros. Maecenas eros justo, ullamcorper a sapien id, viverra ultrices eros. Morbi sem neque, posuere et pretium eget, bibendum sollicitudin lacus. Aliquam eleifend sollicitudin diam, eu mattis nisl maximus sed. Nulla imperdiet semper molestie. Morbi massa odio, condimentum sed ipsum ac, gravida ultrices erat. Nullam eget dignissim mauris, non tristique erat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
-            </div>
-          </div>
-    
-        </div>
-      </div>
-    
-    
-      <div class="parallax-container valign-wrapper">
-        <div class="section no-pad-bot">
-          <div class="container">
-            <div class="row center">
-              <h5 class="header col s12 amber-text fs-30 raleway italic bold line-h60">Un descriptif complet sur chacune des affiches des films disponibles.</h5>
-            </div>
-          </div>
-        </div>
-        <div class="parallax"><img src="img/tournage.jpg" alt="Caméra cinéma"></div>
-      </div>
+{% block content  %} 
+
+{% for img in lastMeme %}
+    <img src="{{ img.ME_image }}" alt="mdr">
+  {% endfor %}
 {% endblock %}
 

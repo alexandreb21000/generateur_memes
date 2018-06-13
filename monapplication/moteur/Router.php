@@ -11,7 +11,7 @@ class Router {
       if( $query === "" || $query === "/" ) {
          $result["controller"] = "index";
          $result["action"] = "display";
-         $result["params"]["limit"] = 3;
+         $result["params"]["limit"] = 5;
 
       } else {
         $parts = explode("/", $query);
