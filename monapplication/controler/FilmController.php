@@ -1,6 +1,6 @@
 <?php
 
-class FilmController extends Controler {
+class FilmController extends Controller {
    public function display() {
       $slug = $this->route["params"]["id"];
       $film = Film::getFilm($slug);

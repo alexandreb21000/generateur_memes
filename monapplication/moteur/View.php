@@ -9,7 +9,7 @@ class View {
    }
 
    public function display() {
-      $viewFile = ROOT . "/monapplication/view/" . $this->_route["controler"] . "/" . $this->_route["action"] . ".html.twig";
+      $viewFile = ROOT . "/monapplication/view/" . $this->_route["controller"] . "/" . $this->_route["action"] . ".html.twig";
 
       if( file_exists( $viewFile ) )
          include($viewFile);

@@ -1,7 +1,7 @@
 <?php
 require_once 'vendor/autoload.php';
 
-class Controler {
+class Controller {
    protected $route;
    protected $view;
 

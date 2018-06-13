@@ -31,7 +31,7 @@ class Kernel {
       
       // Instancier le controleur et
       // executer l'action
-      $class = $route["controler"]."Controller";
+      $class = $route["controller"]."Controller";
      
       if(class_exists($class)) {
          $controler = new $class ($route);

@@ -3,25 +3,31 @@
 class Router {
    public static function analyze( $query ) {
       $result = array(
-         "controler" => "Error",
+         "controller" => "Error",
          "action" => "error404",
          "params" => array()
       );
 
       if( $query === "" || $query === "/" ) {
-         $result["controler"] = "index";
+         $result["controller"] = "index";
          $result["action"] = "display";
          $result["params"]["limit"] = 3;
 
       } else {
-         $parts = explode("/", $query);
-         if($parts[0] == "film" && count($parts) == 2) {
-            $result["controler"] = "Film";
+        $parts = explode("/", $query);
+        if($parts[0] == "meme" && count($parts) == 2){
+            $result["controller"] = "Meme";
             $result["action"] = "display";
-            $result["params"]["id"] = $parts[1];            
-         }
+            $result["params"]["id"] = $parts[1];   
+            
+        } elseif($parts[0] == 'def' && (count($parts) == 1 || $parts[1] == '')){
+            $result["controller"] = "Def";
+            $result["action"] = "display";
+            
+        }
       }
+      
       return $result;
-   }
-
+   
+    }
 }

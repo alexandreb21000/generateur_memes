@@ -1,6 +1,6 @@
 <?php
 
-class IndexController extends Controler {
+class IndexController extends Controller {
    
     public function display()
     {
