@@ -1,0 +1,15 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - Create meme
+{% endblock %}
+
+{% block content  %}
+    {% if message.msg != '' %}
+        <h1 class="{{ message.type }}">{{ message.msg }}</h1>
+    {% endif %}
+    <form method="POST" action="meme" enctype="multipart/form-data">
+        <input type="file" name="img">
+        <input type="submit" name="submitForm" value="Envoyer">
+    </form>
+{% endblock %}

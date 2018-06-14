@@ -15,10 +15,9 @@ class Router {
 
       } else {
         $parts = explode("/", $query);
-        if($parts[0] == "meme" && count($parts) == 2){
+        if($parts[0] == "meme" && count($parts) == 1 || $parts[1] == ""){
             $result["controller"] = "Meme";
-            $result["action"] = "display";
-            $result["params"]["id"] = $parts[1];   
+            $result["action"] = "display";  
             
         } elseif($parts[0] == 'def' && (count($parts) == 1 || $parts[1] == '')){
             $result["controller"] = "Def";
