@@ -5,3 +5,8 @@
 
 .fs-20{font-size: 20px;}
 .fs-30{font-size: 30px;}
+
+
+.block-img-h { height: 400px; }
+.block-img-w { width: 400px; }
+.contain-img { background-size: contain;}

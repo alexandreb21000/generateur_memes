@@ -9,7 +9,18 @@
         <h1 class="{{ message.type }}">{{ message.msg }}</h1>
     {% endif %}
     <form method="POST" action="meme" enctype="multipart/form-data">
-        <input type="file" name="img">
+        <input type="file" name="img" onchange="loadFile(event)">
         <input type="submit" name="submitForm" value="Envoyer">
+        <input type="text" id="texttop" name="texttop" placeholder="texttop">
+        <!-- <input type="text" id="textbottom" name="textbottom" placeholder="textbottom"> -->
     </form>
+   <img class="block-img-h block-img-w contain-img" id="output"/>
 {% endblock %}
+
+{% block javascript %}{{ parent() }}{% endblock %}
+
+
+
+
+
+
