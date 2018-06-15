@@ -10,3 +10,10 @@
 .block-img-h { height: 400px; }
 .block-img-w { width: 400px; }
 .contain-img { background-size: contain;}
+
+.marge-left {margin-left : 10px;}
+
+.size-title {font-size: 5em;}
+.color-title {color: #E9E951;}
+
+.create {height: 500px;}
