@@ -44,42 +44,88 @@ class MemeController extends Controller {
                     /* $file_name = 'image_'.time().'.'.$ext; */
                     //définit l'image en cours
                     $file_name = 'image_'.substr(md5($img['name']), 0, 5).'_'.time().'.'.$ext;
+
+                        $tmp_name = $_FILES["img"]["tmp_name"];
+
+                        /* $fichier_nom = basename($_FILES["img"]["name"]); */
+
+                        $directory = "img/".$file_name;
+                        $text = $_POST['texttop'];
                     
-                    //crée un meme
-                    header('content-type: image/jpeg');
-
-                    /* $source = "img/breaking_bad.jpg"; */
-                    $im = imagecreatefromjpeg($file_name);
-  
-                    $black = imagecolorallocate($im, 0, 0, 0);
-                    imagecolortransparent( $im, $black );
+                        switch ($ext) {
+                            case "jpg" :
+                                $im = imagecreatefromjpeg($_FILES["img"]["tmp_name"]);
+                                break;
+                            case "JPG" :
+                                $im = imagecreatefromjpeg($_FILES["img"]["tmp_name"]);
+                                break;
+                            case "jpeg" :
+                                $im = imagecreatefromjpeg($_FILES["img"]["tmp_name"]);
+                                break;
+                            case "JPEG" :
+                                $im = imagecreatefromjpeg($_FILES["img"]["tmp_name"]);
+                                break;
+                            case "gif" :
+                                $im = imagecreatefromgif($_FILES["img"]["tmp_name"]);
+                                break;
+                            case "GIF" :
+                                $im = imagecreatefromgif($_FILES["img"]["tmp_name"]);
+                                break;
+                            case "png" :
+                                $im = imagecreatefrompng($_FILES["img"]["tmp_name"]);
+                                break;
+                            case "PNG" :
+                                $im = imagecreatefrompng($_FILES["img"]["tmp_name"]);
+                                break;
                     
-                    $originX = 120;
-                    $originY = 120;
-                    $rotation = 0;
-
-                    $fontSize_border = 43;
-                    $fontSize_text = 40;
-                    $font = 'font/arial.ttf';
-
-                    $text = urldecode($_POST['texttop']);
-
-                    imagestring($im, $fontSize_text, $rotation, $originX, $originY, $black, $font, $text);
+                            default :
+                                $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
+                                $message['type'] = "error";
+                                break;
+                        }
                     
-                    imagejpeg($im);
-
-                    //upload
-                    move_uploaded_file($img['tmp_name'], "img/".$file_name);
-
-                    imagedestroy($im);
-
+                        $font = 'font/arial.ttf';
+                        $grey = imagecolorallocate($im, 128, 128, 128);
+                        $red = imagecolorallocate($im, 255, 0, 0);
+                        // Add some shadow to the text
+                       
+                        imagettftext($im, 50, 0, 120, 120, $red, $font, $text);
+                        
+                        /* imagepng(move_uploaded_file($img['tmp_name'], "img/".$file_name)); */
+                        imagepng($im,$directory);
+                        imagedestroy($im);
                     
-                    
-                    $message['msg'] = "Votre image a bien été upload.";
-                    $message['type'] = 'success';
+                        
 
-                    
+                        // Si upload
+                        $message['msg'] = "Votre image a bien été upload.";
+                        $message['type'] = 'success';
+                    }
+                        /* header("Content-type: image/png");
 
+                        $im = imagecreatefrompng("img/".$file_name);
+
+                        $black = imagecolorallocate($im, 0, 0, 0);
+    
+                        $margin_right = 10;
+                        $margin_bottom = 10;
+                        $rotation = 0;
+    
+                        $fontSize_border = 43;
+                        $fontSize_text = 40;
+                        $font = 'font/arial.ttf';
+    
+                        $text = "BONJOUUUUUUUUUUUUUUUUUUUUUUUUUUUUUR";
+    
+                        imagettftext($im, $fontSize_text, $rotation, $margin_right, $margin_bottom, $black, $font, $text);
+                       
+                        
+                        imagepng($im); */
+                        /* move_uploaded_file($img['tmp_name'], "img/".$file_name); */
+                        /* imagedestroy($im); */
+
+                        
+                                
                     /* $output = $_FILES['img']; */
                     
                     // Création de l'image
@@ -120,12 +166,10 @@ class MemeController extends Controller {
                     $message['type'] = 'error';
                 }
             }
-        }
-
-      $template = $this->twig->loadTemplate('/pages/display.html.twig');
+            $template = $this->twig->loadTemplate('/pages/display.html.twig');
             echo $template->render(array(
-                'message' => $message
+                'message' => $message,
+                
             ));
-        
+        }   
     }
-}

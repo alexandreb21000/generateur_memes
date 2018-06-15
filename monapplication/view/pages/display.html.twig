@@ -14,7 +14,8 @@
         <input type="text" id="texttop" name="texttop" placeholder="texttop">
         <!-- <input type="text" id="textbottom" name="textbottom" placeholder="textbottom"> -->
     </form>
-   <img class="block-img-h block-img-w contain-img" id="output"/>
+   <img name="current_img" class="block-img-h block-img-w contain-img" id="output"/>
+   {{ im }}
 {% endblock %}
 
 {% block javascript %}{{ parent() }}{% endblock %}
