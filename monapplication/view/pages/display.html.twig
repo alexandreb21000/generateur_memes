@@ -10,12 +10,12 @@
     {% endif %}
     <form method="POST" action="meme" enctype="multipart/form-data">
         <input type="file" name="img" onchange="loadFile(event)">
-        <input type="submit" name="submitForm" value="Envoyer">
-        <input type="text" id="texttop" name="texttop" placeholder="texttop">
-        <!-- <input type="text" id="textbottom" name="textbottom" placeholder="textbottom"> -->
+        <input type="submit" name="submitForm" value="Générer mon meme">
+        <input type="text" id="texttop" name="texttop" placeholder="Top text">
+        <input type="text" id="textbottom" name="textbottom" placeholder="Bottom text">
     </form>
    <img name="current_img" class="block-img-h block-img-w contain-img" id="output"/>
-   {{ im }}
+
 {% endblock %}
 
 {% block javascript %}{{ parent() }}{% endblock %}
