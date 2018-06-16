@@ -22,8 +22,8 @@ class Router {
         } elseif($parts[0] == 'def' && (count($parts) == 1 || $parts[1] == '')){
             $result["controller"] = "Def";
             $result["action"] = "display";
-            
-        }
+
+        } 
       }
       
       return $result;

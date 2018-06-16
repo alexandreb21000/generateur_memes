@@ -4,10 +4,12 @@ class MemeController extends Controller {
    
     public function display()
     {
+        
         $message = array();
         $nb_erreur = 0;
-
+        
         if(!empty($_FILES)){
+            
             if(isset($_FILES['img']['error'])){
                 switch($_FILES['img']['error']){
                     case 1:
@@ -34,8 +36,11 @@ class MemeController extends Controller {
             }
             
             if($nb_erreur == 0){
+                header("Content-type: image/jpeg");
+                header("Content-type: image/png");
+                header("Content-type: image/gif");
+
                 $img = $_FILES['img'];
-                
                 $ext = substr($img['name'], strrpos($img['name'], '.') + 1);
                 $allow_ext = array("jpg", "JPG", "png", "PNG", "JPEG", "jpeg", "GIF", "gif");
 
@@ -46,6 +51,8 @@ class MemeController extends Controller {
                     //Récupère le chemin temporaire + la direction où on veux l'envoyer.
                     $tmp_name = $_FILES["img"]["tmp_name"];
                     $directory = "img/".$file_name;
+
+                    
 
                         $array_jpg = array('jpg', 'JPG', 'jpeg', 'JPEG');
                         $array_gif = array('gif', 'GIF');
@@ -114,7 +121,6 @@ class MemeController extends Controller {
                         $upper_left_y_bot =  $text_bound_bot[7];
 
                     //Création du texte
-
                         //Récupère la largeur du texte et sa hauteur
                             //top
                             $text_width_top =  $lower_right_x_top - $lower_left_x_top;
@@ -153,7 +159,22 @@ class MemeController extends Controller {
                         imagettftext($im, $font_size, $rotation, $start_x_offset_bot, $start_end_offset, $white, $font, $text_bot);
                         
                     //Envoi l'image à la destination souhaitée et libère la mémoire une fois envoyé.
-                        imagepng($im,$directory);
+                        if(isset($_POST['submitForm'])){
+                            if(in_array($ext, $array_jpg)){
+                                imagejpeg($im,$directory);
+                                imagejpeg($im);
+                            } elseif(in_array($ext, $array_gif)){
+                                imagegif($im,$directory);
+                                imagegif($im);
+                            } elseif(in_array($ext, $array_png)){
+                                imagepng($im,$directory);
+                                imagepng($im);
+                            } else { 
+                                $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
+                                $message['type'] = "error";
+                            }  
+                        }
+
                         imagedestroy($im);
 
                     // Si upload message de succès.
@@ -168,7 +189,6 @@ class MemeController extends Controller {
             $template = $this->twig->loadTemplate('/pages/display.html.twig');
             echo $template->render(array(
                 'message' => $message,
-                
             ));
         }   
     }
