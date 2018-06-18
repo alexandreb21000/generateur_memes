@@ -189,6 +189,7 @@ class MemeController extends Controller {
             $template = $this->twig->loadTemplate('/pages/display.html.twig');
             echo $template->render(array(
                 'message' => $message,
+                
             ));
         }   
     }

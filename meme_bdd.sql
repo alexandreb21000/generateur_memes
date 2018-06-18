@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  mer. 13 juin 2018 à 07:26
+-- Généré le :  lun. 18 juin 2018 à 07:20
 -- Version du serveur :  5.7.19
 -- Version de PHP :  7.1.9
 
@@ -32,9 +32,22 @@ DROP TABLE IF EXISTS `meme`;
 CREATE TABLE IF NOT EXISTS `meme` (
   `ME_id` int(11) NOT NULL AUTO_INCREMENT,
   `ME_image` varchar(255) NOT NULL,
-  `ME_url` varchar(255) NOT NULL,
+  `ME_date` datetime DEFAULT NULL,
   PRIMARY KEY (`ME_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `meme`
+--
+
+INSERT INTO `meme` (`ME_id`, `ME_image`, `ME_date`) VALUES
+(1, 'https://www.swad.fr/upload/membres/51/profil_1464097916.jpg', NULL),
+(2, 'https://www.swad.fr/upload/membres/51/profil_1464097916.jpg', NULL),
+(3, 'https://www.swad.fr/upload/membres/51/profil_1464097916.jpg', NULL),
+(4, 'https://www.swad.fr/upload/membres/51/profil_1464097916.jpg', NULL),
+(5, 'https://www.swad.fr/upload/membres/51/profil_1464097916.jpg', NULL),
+(6, 'https://www.swad.fr/upload/membres/51/profil_1464097916.jpg', NULL),
+(7, 'https://www.swad.fr/upload/membres/37/profil_1464097921.jpg', NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
