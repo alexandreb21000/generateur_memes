@@ -11,9 +11,13 @@
 .block-img-w { width: 400px; }
 .contain-img { background-size: contain;}
 
+<<<<<<< HEAD
 .marge-left {margin-left : 10px;}
 
 .size-title {font-size: 5em;}
 .color-title {color: #E9E951;}
 
 .create {height: 500px;}
+=======
+.bordertext{text-shadow: #000 1px 1px 2px;}
+>>>>>>> abb67252dfb198e33d5557503fc4fe11519d9210
