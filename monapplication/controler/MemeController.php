@@ -36,9 +36,9 @@ class MemeController extends Controller {
             }
             
             if($nb_erreur == 0){
-                header("Content-type: image/jpeg");
+                /* header("Content-type: image/jpeg");
                 header("Content-type: image/png");
-                header("Content-type: image/gif");
+                header("Content-type: image/gif"); */
 
                 $img = $_FILES['img'];
                 $ext = substr($img['name'], strrpos($img['name'], '.') + 1);
@@ -160,15 +160,15 @@ class MemeController extends Controller {
                         
                     //Envoi l'image à la destination souhaitée et libère la mémoire une fois envoyé.
                         if(isset($_POST['submitForm'])){
-                            if(in_array($ext, $array_jpg)){
+                            if(in_array($ext, $array_jpg)){ 
                                 imagejpeg($im,$directory);
-                                imagejpeg($im);
+                                
                             } elseif(in_array($ext, $array_gif)){
                                 imagegif($im,$directory);
-                                imagegif($im);
+                                
                             } elseif(in_array($ext, $array_png)){
                                 imagepng($im,$directory);
-                                imagepng($im);
+                                
                             } else { 
                                 $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
                                 $message['type'] = "error";
@@ -176,7 +176,7 @@ class MemeController extends Controller {
                         }
 
                         imagedestroy($im);
-
+                       
                     // Si upload message de succès.
                         $message['msg'] = "Votre image a bien été upload.";
                         $message['type'] = 'success';
@@ -186,6 +186,7 @@ class MemeController extends Controller {
                     $message['type'] = 'error';
                 }
             }
+
             $template = $this->twig->loadTemplate('/pages/display.html.twig');
             echo $template->render(array(
                 'message' => $message,
