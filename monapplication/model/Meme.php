@@ -18,6 +18,7 @@ class Meme extends Model {
     }
 
     public static function saveMeme() {
+
         $db = Database::getInstance();
         $sql = 
        "INSERT INTO meme
@@ -32,4 +33,5 @@ class Meme extends Model {
         $stmt->execute();
         
     }
+
 }

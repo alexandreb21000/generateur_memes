@@ -6,9 +6,15 @@
 .fs-20{font-size: 20px;}
 .fs-30{font-size: 30px;}
 
+.mlr-10{margin: 0 10px;}
 
 .block-img-h { height: 400px; }
 .block-img-w { width: 400px; }
 .contain-img { background-size: contain;}
 
-.bordertext{text-shadow: #000 1px 1px 2px;}
+.marge-left {margin-left : 10px;}
+
+.size-title {font-size: 5em;}
+.color-title {color: #E9E951;}
+
+.create {height: 500px;}

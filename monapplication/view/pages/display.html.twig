@@ -5,6 +5,31 @@
 {% endblock %}
 
 {% block content  %}
+
+<div class="uk-flex uk-flex-wrap-between uk-background-default uk-height-large uk-container uk-width1-1 ">
+    <div class="uk-width-1-4 uk-flex">
+        <h1 class="uk-text-bold size-title color-title uk-flex-middle">
+        CREATE </br>
+        YOUR </br>
+        OWN </br>
+        MEME </br>
+        </h1>
+    </div>
+    
+    <div class="uk-width-1-4">         
+        <img class="block-img-h block-img-w contain-img" id="output"/>
+    </div>
+
+    <div class="uk-width-2-4 uk-flex uk-flex-column">
+        <form method="POST" action="meme" enctype="multipart/form-data">
+            <input type="file" name="img" onchange="loadFile(event)">
+            <!-- <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle> --> <input type="submit" name="submitForm" value="Envoyer"><!-- </a> -->
+            <input type="text" id="texttop" name="texttop" placeholder="texttop">
+            <input type="text" id="textbottom" name="textbottom" placeholder="textbottom">
+        </form>
+    </div>
+</div>
+
     {% if message.msg != '' %}
         <h1 class="{{ message.type }}">{{ message.msg }}</h1>
     {% endif %}
@@ -16,7 +41,7 @@
         <input type="text" id="textbottom" name="textbottom" placeholder="Bottom text">
     </form>
    <img name="current_img" class="block-img-h block-img-w contain-img" id="output"/>
-<img src="{{ im }}" alt="">
+
 {% endblock %}
 
 {% block javascript %}{{ parent() }}{% endblock %}

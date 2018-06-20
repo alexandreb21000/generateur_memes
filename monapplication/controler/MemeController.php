@@ -4,7 +4,7 @@ class MemeController extends Controller {
    
     public function display()
     {
-        
+
         $message = array();
         $nb_erreur = 0;
         
@@ -36,9 +36,6 @@ class MemeController extends Controller {
             }
             
             if($nb_erreur == 0){
-                /* header("Content-type: image/jpeg");
-                header("Content-type: image/png");
-                header("Content-type: image/gif"); */
 
                 $img = $_FILES['img'];
                 $ext = substr($img['name'], strrpos($img['name'], '.') + 1);
@@ -130,8 +127,6 @@ class MemeController extends Controller {
                             $text_width_bot =  $lower_right_x_bot - $lower_left_x_bot;
                             $text_height_bot = $lower_left_y_bot - $upper_left_y_bot; 
 
-
-
                         //Récupère la position ou le texte sera centré.
                         $start_x_offset_top = ($image_width - $text_width_top) / 2; //Centre Horizontalement le texte.
                         $start_y_offset_top = ($image_height - $text_height_top) / 2; //Centre verticalement le texte.
@@ -162,13 +157,14 @@ class MemeController extends Controller {
                         if(isset($_POST['submitForm'])){
                             if(in_array($ext, $array_jpg)){ 
                                 imagejpeg($im,$directory);
-                                
+                    
                             } elseif(in_array($ext, $array_gif)){
                                 imagegif($im,$directory);
                                 
                             } elseif(in_array($ext, $array_png)){
                                 imagepng($im,$directory);
                                 
+
                             } else { 
                                 $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
                                 $message['type'] = "error";

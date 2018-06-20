@@ -13,7 +13,7 @@ class Database {
    protected function __construct() {
       // A faire : fichier de config
 
-define ("db_name","meme_generateur");
+define ("db_name","generateur_meme");
 define ("server_name","localhost");
 define ("user","root");
 define ("password","");
