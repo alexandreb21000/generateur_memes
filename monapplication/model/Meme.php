@@ -196,7 +196,7 @@ class Meme extends MemeController {
                        
                         imagedestroy($im);
                         
-                        $saveMeme = Meme::saveMeme($file_name);
+                        /* $saveMeme = Meme::saveMeme($file_name); */
                         $message['urlImg'] = $file_name;
 
                     // Si upload message de succès.
@@ -220,7 +220,7 @@ class Meme extends MemeController {
         VALUES
         (:img, :dat)
        ");
-        $pdoStat->bindValue(':img', $name_db, PDO::PARAM_STR);
+        $pdoStat->bindValue(':img',  $message['urlImg'], PDO::PARAM_STR);
         $pdoStat->bindValue(':dat', time(), PDO::PARAM_STR);
         $pdoStat->execute();
         $id = $db->lastInsertId(); 
