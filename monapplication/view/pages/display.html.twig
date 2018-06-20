@@ -16,10 +16,8 @@
         </h1>
     </div>
     
-    <div class="uk-width-1-4">
-                
-            <img class="block-img-h block-img-w contain-img" id="output">
-        
+    <div class="uk-width-1-4">         
+        <img class="block-img-h block-img-w contain-img" id="output"/>
     </div>
 
     <div class="uk-width-2-4 uk-flex uk-flex-column">
@@ -32,17 +30,17 @@
         
     </div>
 </div>
-{% if urlImg != '' %}
-    <img class="block-img-h block-img-w contain-img" src="img/{{ urlImg }}" />
-    <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>Partager</a>
-{%  endif %}
+
+    {% if urlImg != '' %}
+        <img class="block-img-h block-img-w contain-img" src="img/{{ urlImg }}" />
+        <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>Partager</a>
+    {%  endif %}
+
     {% if message.msg != '' %}
         <h1 class="{{ message.type }}">{{ message.msg }}</h1>
     {% endif %}
     
-    
-
-    <!-- Create Box -->
+<!-- Create Modal -->
 <div id="modal-sections" uk-modal>
     <div class="uk-modal-dialog">
         <button class="uk-modal-close-default" type="button" uk-close></button>
