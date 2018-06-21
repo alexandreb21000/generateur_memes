@@ -10,6 +10,7 @@
     <meta property="og:description"   content="Your description" />
     <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
     <base href="http://localhost/generateur_memes/">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
     <link href="css/uikit.css" type="text/css" rel="stylesheet">
     <link href="css/uikit-rtl.css" type="text/css" rel="stylesheet">
@@ -19,11 +20,11 @@
 <body>
     {% include "layout/header.html.twig" %}
 
-    {% block content %}{% endblock %}
+        {% block content %}{% endblock %}
 
-    {% include "layout/footer.html.twig" %}
+        {% include "layout/footer.html.twig" %}
 
-
+    </main>
     {% block javascript %}
     <script src="js/jquery.min.js"></script> 
     <script src="js/uikit.min.js"></script> 

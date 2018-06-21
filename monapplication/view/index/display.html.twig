@@ -5,16 +5,25 @@
 {% endblock %}
 
 {% block content  %} 
-<div uk-height-viewport="expand: true">
-  <div class="uk-container">
-      <h1 class="uk-heading-bullet uk-flex uk-flex-center">LAST MEME</h1>
-    {% for img in lastMeme %}
-    
-      <img data-src="img/{{ img.ME_image }}" width="400" height="400" alt="meme" uk-img>
-    
-    {% endfor %}
-  </div>
-</div> 
+<div class= " uk-flex uk-width-1-1@m uk-width-1-1@s uk-margin-medium-top" uk-height-viewport="expand: true" uk-grid>
+        
+    <div class="uk-width-1-5@m uk-margin-large-left">
+        <h1 class="uk-text-bold size-title color-title raleway">
+        MEME </br>
+        MEM </br>
+        ME </br>
+        M </br>
+        </h1>
+        <p class="uk-text-bold">CREATE YOUR OWN MEME <a href="meme"><i class="fas fa-plus-circle"></i></a></p>
+    </div>
+
+    <div class="uk-width-3-5@m uk-width-2-3@l uk-margin-large-left">
+            <h1 class="uk-heading-bullet raleway uk-text-bold">LAST MEME</h1>
+          {% for img in lastMeme %}
+            <img data-src="img/{{ img.ME_image }}" width="400" height="400" alt="meme" uk-img>
+          {% endfor %}
+    </div>
+</div>
 
 {% endblock %}
 
