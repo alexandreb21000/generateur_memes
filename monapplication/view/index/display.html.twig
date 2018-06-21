@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block content  %} 
-<div class= " uk-flex uk-width-1-1@m uk-width-1-1@s uk-margin-medium-top" uk-height-viewport="expand: true" uk-grid>
+<div class= "uk-flex uk-width-1-1@m uk-width-1-1@s uk-margin-medium-top" uk-height-viewport="expand: true">
         
     <div class="uk-width-1-5@m uk-margin-large-left">
         <h1 class="uk-text-bold size-title color-title raleway">
@@ -18,12 +18,15 @@
     </div>
 
     <div class="uk-width-3-5@m uk-width-2-3@l uk-margin-large-left">
-            <h1 class="uk-heading-bullet raleway uk-text-bold">LAST MEME</h1>
+      <h1 class="uk-heading-bullet raleway uk-text-bold">LAST MEME</h1>
+        <div class="uk-child-width-1-1@s uk-child-width-1-2@m uk-child-width-1-3@l" uk-grid>
           {% for img in lastMeme %}
-            <img data-src="img/{{ img.ME_image }}" width="400" height="400" alt="meme" uk-img>
-          {% endfor %}
+            <div class="">
+                <img data-src="img/{{ img.ME_image }}" width="200px" height"200px" alt="meme" uk-img>
+            </div>
+          {% endfor %}               
+        </div>            
     </div>
-</div>
-
+  </div>
 {% endblock %}
 
