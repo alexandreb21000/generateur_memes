@@ -5,8 +5,9 @@
 
 .fs-20{font-size: 20px;}
 .fs-30{font-size: 30px;}
+.fs-40{font-size: 40px;}
 
-.mlr-10{margin: 0 10px;}
+.h100vh{height:100vh;}
 
 .block-img-h { height: 400px; }
 .block-img-w { width: 400px; }
@@ -18,3 +19,16 @@
 .color-title {color: #E9E951;}
 
 .create {height: 500px;}
+
+/* ==============================================================
+                            NAVBAR
+============================================================== */
+
+.uk-navbar-nav>li>a{font-size: 20px;font-family: "Raleway", sans-serif;} /* Font size + font family des liens */
+
+.uk-offcanvas-bar>li>a, .uk-offcanvas-bar .uk-close{color:#FFF;}    /* Liens + Croix */
+
+.uk-navbar-nav>li>a:hover, .uk-offcanvas-bar .uk-nav-default>li>a:not(.uk-logo):hover,  /* Liens + croix en hover */
+.uk-offcanvas-bar a:hover, .uk-offcanvas-bar .uk-close:hover
+{color:#E9E951;}
+

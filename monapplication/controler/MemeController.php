@@ -17,5 +17,4 @@ class MemeController extends Controller {
             'type'      => $result['type']
         ));
         }   
-
     }

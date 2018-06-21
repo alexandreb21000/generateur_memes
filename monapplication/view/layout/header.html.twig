@@ -1,26 +1,48 @@
-<nav class="uk-navbar-container uk-margin uk-navbar-transparent">
-    <div class="uk-flex uk-flex-around uk-width-1-1">
-        <div class="uk-navbar-left">
+<!-- Menu Medium/Large -->
+
+<nav class="uk-navbar-container uk-margin uk-navbar-transparent uk-width-1-1@s uk-visible@m" >
+    <div class="uk-flex">
+        <div class="uk-nav-left uk-margin-medium-left">
+            <a class="uk-navbar-item uk-logo fs-30" href="">GE <span class="color-title mlr-10">MEME</span> RATOR</a>
+        </div>
+
+        <div class="uk-navbar-right uk-margin-medium-right">
             <ul class="uk-navbar-nav">
-                <li class="uk-nav">
-                    <a href="index.php">Home</a>
+                <li class="uk-nav uk-margin-small-left uk-margin-small-right">
+                    <a class="" href="">Home</a>
                 </li>
-                <li class="uk-nav">
-                    <a href="index.php/meme">Create</a>
+                <li class="uk-nav uk-margin-small-left uk-margin-small-right">
+                    <a class="" href="meme">Create</a>
+                </li>
+                <li class="uk-nav uk-margin-small-left uk-margin-small-right">
+                    <a class="" href="definition">Meme ?</a>
                 </li>
             </ul>
         </div>
- 
-        <a class="uk-navbar-item uk-logo" href="index.php">GE <span class="color-title mlr-10">MEME</span> RATOR</a>
-        
-        <div class="uk-navbar-right">
-            <div>
-                <ul class="uk-navbar-nav">
-                    <li>
-                        <a href="#">Meme ?</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
     </div>
 </nav>
+
+<!-- Menu mobile/Tablette -->
+
+<a href="#offcanvas-reveal" class="uk-margin-left uk-margin-top uk-margin-bottom uk-nav-right uk-hidden@m" uk-toggle="#offcanvas-reveal" uk-navbar-toggle-icon></a>
+<div id="offcanvas-reveal" class="uk-hidden@m" uk-offcanvas="mode: reveal; flip:true;">
+    <div class="uk-offcanvas-bar">
+        <button class="uk-offcanvas-close" type="button" uk-close></button>
+        <ul class="uk-nav uk-nav-default uk-height-1-1 uk-flex uk-flex">
+            <div class="uk-flex uk-flex-around uk-height-1-1 uk-flex-column">
+                <li class="uk-width-1-1 uk-flex uk-flex-center">
+                    <a class="uk-navbar-header uk-logo fs-30" href="">GE <span class="color-title mlr-10">MEME</span> RATOR</a>
+                </li>
+                <li class="uk-nav-item uk-flex uk-flex-center uk-width-1-1">
+                    <a class="" href="">HOME</a>
+                </li>
+                <li class="uk-nav-item uk-flex uk-flex-center uk-width-1-1">
+                    <a href="meme">CREATE</a>
+                </li>
+                <li class="uk-nav-item uk-flex uk-flex-center uk-width-1-1">
+                    <a href="definition">MEME?</a>
+                </li>
+            </div>
+        </ul>
+    </div>
+</div>

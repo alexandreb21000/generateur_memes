@@ -5,10 +5,16 @@
 {% endblock %}
 
 {% block content  %} 
+<div uk-height-viewport="expand: true">
+  <div class="uk-container">
+      <h1 class="uk-heading-bullet uk-flex uk-flex-center">LAST MEME</h1>
+    {% for img in lastMeme %}
+    
+      <img data-src="img/{{ img.ME_image }}" width="400" height="400" alt="meme" uk-img>
+    
+    {% endfor %}
+  </div>
+</div> 
 
-{% for img in lastMeme %}
-    <img src="img/{{ img.ME_image }}" alt="mdr">
-  
-  {% endfor %}
 {% endblock %}
 

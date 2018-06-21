@@ -11,12 +11,12 @@
     <meta property="og:image"         content="https://www.your-domain.com/path/image.jpg" />
     <base href="http://localhost/generateur_memes/">
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,600,700" rel="stylesheet">
-    <link href="css/style.css" type="text/css" rel="stylesheet">
     <link href="css/uikit.css" type="text/css" rel="stylesheet">
     <link href="css/uikit-rtl.css" type="text/css" rel="stylesheet">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
     <title>{% block title %}GEMEMERATOR{% endblock %}</title>
 </head>
-<body class="uk-height-1-1">
+<body>
     {% include "layout/header.html.twig" %}
 
     {% block content %}{% endblock %}
@@ -25,11 +25,11 @@
 
 
     {% block javascript %}
-    <script src="js/app.js"> </script> 
-    <script src="js/jquery.min.js"> </script> 
-    <script src="js/uikit.js"> </script> 
-    <script src="js/uikit-icons.js"> </script> 
-    <script src="js/facebook.js"> </script> 
+    <script src="js/jquery.min.js"></script> 
+    <script src="js/uikit.min.js"></script> 
+    <script src="js/uikit-icons.min.js"></script>
+    <script src="js/app.js"></script> 
+    <script src="js/facebook.js"></script> 
     
     {% endblock %}
 </body>
