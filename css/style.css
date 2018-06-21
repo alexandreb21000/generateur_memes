@@ -8,6 +8,7 @@
 
 .mlr-10{margin: 0 10px;}
 
+
 .block-img-h { height: 400px; }
 .block-img-w { width: 400px; }
 .contain-img { background-size: contain;}
@@ -18,3 +19,9 @@
 .color-title {color: #E9E951;}
 
 .create {height: 500px;}
+
+.ft-bold{ font-weight: 700; }
+
+.line-ft { border-top: 2px #444 solid }
+
+.full-screen {height: 100vh;}

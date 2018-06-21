@@ -1,0 +1,50 @@
+{% extends 'layout/layout.html.twig' %}
+
+{% block title %}
+  {{ parent() }} - Create meme
+{% endblock %}
+
+{% block content  %}
+    <div class= " uk-flex uk-width-1-1@m uk-width-1-1@s uk-margin-medium-top" uk-height-viewport="expand: true" uk-grid>
+        
+        <div class="uk-width-1-5@m uk-margin-large-left" >
+            <h1 class="uk-text-bold size-title color-title ">
+            WHAT </br>
+            IS </br>
+            A </br>
+            MEME </br>
+            </h1>
+        </div>
+
+        <div class="uk-width-3-5@m uk-width-2-3@l uk-margin-large-left ">
+                <h1 class="uk-heading-bullet ">DEFINITION</h1>
+        
+                <h2 class="">"</h2>
+                <cite class=" uk-text-justify">
+                    Un mème Internet est un élément ou un phénomène repris et décliné en masse sur Internet.
+                    C'est un anglicisme venant d'« Internet meme ». Il se prononce [miːm] en anglais et [mɛm] en français.<br>
+                    
+                    <br>
+                    C'est une acception récente du terme mème, qui définit ce phénomène dans sa globalité.
+                    D'après l’Oxford English Dictionary, un « mème » est un élément d'une culture ou d'un ensemble de
+                    comportements qui
+                    se transmet d'un individu à l'autre par imitation ou par un quelconque autre moyen non-génétique
+                    (« an element of a culture or system of behaviour passed from one individual to another
+                    by imitation or other non-genetic means »).
+                </cite>
+                <h2 class="uk-margin-large-left uk-text-right">"</h2>
+        </div>
+    </div>
+
+    
+   
+
+{% endblock %}
+
+{% block javascript %}{{ parent() }}{% endblock %}
+
+
+
+
+
+

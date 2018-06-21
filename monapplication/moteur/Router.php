@@ -15,12 +15,12 @@ class Router {
 
       } else {
         $parts = explode("/", $query);
-        if($parts[0] == "meme" && count($parts) == 1 || $parts[1] == ""){
-            $result["controller"] = "Meme";
+        if($parts[0] == "meme" && (count($parts) == 1 || $parts[1] == "")){
+            $result["controller"] = "meme";
             $result["action"] = "display";  
             
-        } elseif($parts[0] == 'def' && (count($parts) == 1 || $parts[1] == '')){
-            $result["controller"] = "Def";
+        } elseif($parts[0] == "definition" && (count($parts) == 1 || $parts[1] == "")){
+            $result["controller"] = "definition";
             $result["action"] = "display";
 
         } 
