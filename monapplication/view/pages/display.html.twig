@@ -17,13 +17,17 @@
         </div>
         
         <div class="uk-width-1-4 offset-1 uk-margin-large-left"> 
-            
+
             {% if urlImg != '' %}
-                <img class="block-img-h block-img-w contain-img" src="img/{{ urlImg }}" />
-            {%  endif %}    
-            
-            <img class="block-img-h block-img-w contain-img " id="output"/>
-            <img class="uk-width-1-1 max-h-auto" id="output">
+                <img src="img/{{ urlImg }}" />
+            {%  endif %}
+
+            <img id="output"/>
+
+            {%  if message != "" %}
+                <h1 class="{{ type }} red">{{ message }}</h1>    
+            {% endif %}
+
         </div>
          
         <div class="uk-width-1-4 uk-flex uk-flex-column uk-margin-large-left ">
