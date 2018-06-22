@@ -55,21 +55,6 @@ img:not([src]){
     display:none;
 }
 
-
-
-/* @media screen and (max-width: 1070px) {
-    .bloc {
-      display: flex;
-      flex-direction: column;
-    }
-    .title {
-        text-align: center;
-    }
-    .text {
-        text-align: justify;
-    }
-  } */
-
   @media screen and (max-width: 640px) {
     .bloc {
       display: flex;
