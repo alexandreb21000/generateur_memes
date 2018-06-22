@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="lol">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,14 +17,17 @@
     <link href="css/style.css" type="text/css" rel="stylesheet">
     <title>{% block title %}GEMEMERATOR{% endblock %}</title>
 </head>
-<body>
+<body class="mdr">
     {% include "layout/header.html.twig" %}
 
+    <main>
         {% block content %}{% endblock %}
+
+    </main>
 
         {% include "layout/footer.html.twig" %}
 
-    </main>
+   
     {% block javascript %}
     <script src="js/jquery.min.js"></script> 
     <script src="js/uikit.min.js"></script> 

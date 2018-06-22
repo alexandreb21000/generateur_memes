@@ -6,8 +6,8 @@
 
 {% block content  %}
 
-<div class="uk-flex uk-flex-wrap-between uk-background-default uk-height-large uk-container uk-width1-1 ">
-        <div class="uk-width-1-4 uk-flex">
+<div class="uk-flex uk-flex-middle uk-flex-wrap-between uk-background-default uk-height-large uk-container uk-width1-1 uk-margin-medium-top" uk-height-viewport="expand: true">
+        <div class="uk-width-1-4 uk-margin-large-left uk-flex">
             <h1 class="uk-text-bold size-title color-title uk-flex-middle">
             CREATE </br>
             YOUR </br>
@@ -19,11 +19,11 @@
         <div class="uk-width-1-4 offset-1 uk-margin-large-left"> 
             {% if urlImg != '' %}
                 <img class="block-img-h block-img-w contain-img" src="img/{{ urlImg }}" />
-                <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>Partager</a>
+               
             {%  endif %}        
             <img class="block-img-h block-img-w contain-img" id="output"/>
             {% if message.msg != '' %}
-                <h1 class="{{ message.type }}">{{ message.msg }}</h1>
+                <h1 class="{{ type }}">{{ message }}</h1>
             {% endif %}
 
         </div>
@@ -42,7 +42,10 @@
                 <h3 class="uk-margin-remove-bottom uk-margin-small-top">Text bottom</h3>
                 <input type="text" id="textbottom" name="textbottom" placeholder="textbottom"> <br>
                 <input class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom uk-margin-top uk-text-bold color-button bg-button" type="submit" name="submitForm" value="GENERATE" >
-    
+                {% if urlImg != '' %}
+                    <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>Share</a>
+                {%  endif %}
+                
                 
             </form>
             
@@ -66,14 +69,14 @@
                
                     <input class="uk-input uk-form-width-large uk-form-small" type="text"  value="generateur_memes/meme/{{ urlImg }}" col="150" disabled>
                     <!-- Your share button code -->
-                    <div id="fb-root"></div>
-                    <div class="marge-left fb-share-button" data-href="https://generateur_memes/meme/{{ urlImg }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Falexandreb.boubou.7&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
+                    <div class="uk-margin-small-top" id="fb-root"></div>
+                    <div class=" fb-share-button" data-href="https://generateur_memes/meme/{{ urlImg }}" data-layout="button" data-size="small" data-mobile-iframe="true"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Falexandreb.boubou.7&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Partager</a></div>
                     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="marge-left twitter-share-button" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
             </div>
             <div class="uk-modal-footer uk-text-right">
                 <button class="uk-button uk-button-default uk-modal-close" type="button">Cancel</button>
-                <button class="uk-button uk-button-primary" type="button" href"download">Save</button>
+                <a href="img/{{ urlImg }}" download><button class="uk-button uk-button-primary" type="button" href"">Save</button></a>
             </div>
         </div>
     </div>

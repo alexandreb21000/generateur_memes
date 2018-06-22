@@ -19,6 +19,8 @@
 .size-title {font-size: 5em;}
 .color-title {color: #E9E951;}
 .bg-button {background: #E9E951;}
+.bg-ft {background: #444;}
+.cf-footer {color: #FFF;}
 .color-button {color: #444; }
 
 .create {height: 500px;}
@@ -43,3 +45,8 @@
 ============================================================== */
 
 .fa, .fas{color:#444;}
+
+/* ==============================================================
+                            FIX FOOTER
+============================================================== */
+
