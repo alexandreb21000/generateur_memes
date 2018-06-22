@@ -8,7 +8,7 @@
 
 <div class="uk-flex uk-flex-middle uk-flex-wrap-between uk-background-default uk-height-large uk-container uk-width1-1 uk-margin-medium-top" uk-height-viewport="expand: true">
         <div class="uk-width-1-4 uk-margin-large-left uk-flex">
-            <h1 class="uk-text-bold size-title color-title uk-flex-middle">
+            <h1 class="uk-text-bold fs-80 color-title uk-flex-middle">
             CREATE </br>
             YOUR </br>
             OWN </br>
@@ -32,10 +32,12 @@
          
         <div class="uk-width-1-4 uk-flex uk-flex-column uk-margin-large-left">
             <form method="POST" action="meme" enctype="multipart/form-data">
+                    {% if message != '' %}
+                        <h1 class= "fs-20 color-title {{ type }}">{{ message }}</h1>
+                    {% endif %}
                 <div uk-form-custom>
                     <h1 class="uk-heading-divider uk-text-bold">TOOLS</h1>
                     <h2>Upload your own image</h2>
-    
                     <input type="file" name="img" onchange="loadFile(event)">
                     <button class="uk-button uk-button-default" type="button" tabindex="-1">Select</button>
                 </div>

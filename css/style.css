@@ -1,3 +1,5 @@
+
+
 .raleway{font-family: "Raleway", sans-serif;}
 .bold{font-weight: 700;}
 .medium{font-weight: 500;}
@@ -43,7 +45,7 @@
                             FONT ICON
 ============================================================== */
 
-.fa, .fas{color:#444;}
+.fa-color{color:#444;}
 
 
 /* Cacher la préview quand le meme est crée */
@@ -52,3 +54,31 @@ img:not([src]){
     visibility: visible;
     display:none;
 }
+
+
+
+/* @media screen and (max-width: 1070px) {
+    .bloc {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+        text-align: center;
+    }
+    .text {
+        text-align: justify;
+    }
+  } */
+
+  @media screen and (max-width: 640px) {
+    .bloc {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+        text-align: center;
+    }
+    .text {
+        text-align: justify;
+    }
+  }
