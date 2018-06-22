@@ -28,21 +28,25 @@ class Meme extends MemeController {
             if(isset($_FILES['img']['error'])){
                 switch($_FILES['img']['error']){
                     case 1:
+                        $message['urlImg'] = '';
                         $message['msg'] = "Votre fichier ne doit pas dépasser 10Mo";
                         $message['type'] = 'error';
                         $nb_erreur++;
                         break;
                     case 2:
+                        $message['urlImg'] = '';
                         $message['msg'] = "Erreur";
                         $message['type'] = 'error';
                         $nb_erreur++;
                         break;
                     case 3:
+                        $message['urlImg'] = '';
                         $message['msg'] = "Une erreur est survenue lors du téléchargement.";
                         $message['type'] = 'error';
                         $nb_erreur++;
                         break;
                     case 4:
+                        $message['urlImg'] = '';
                         $message['msg'] = "Aucun fichier n'a été séléctionné.";
                         $message['type'] = 'error';
                         $nb_erreur++;
@@ -78,6 +82,7 @@ class Meme extends MemeController {
                         } elseif(in_array($ext, $array_png)){
                             $im = imagecreatefrompng($tmp_name);
                         } else {
+                            $message['urlImg'] = '';
                             $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
                             $message['type'] = "error";
                         }
@@ -183,7 +188,8 @@ class Meme extends MemeController {
                         } elseif(in_array($ext, $array_png)){
                             imagepng($im,$directory);
                             
-                        } else { 
+                        } else {
+                            $message['urlImg'] = '';
                             $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
                             $message['type'] = "error";
                         }    
@@ -197,26 +203,29 @@ class Meme extends MemeController {
                         $message['msg'] = "Votre image a bien été upload.";
                         $message['type'] = 'success';
 
+                        $db = Database::getInstance();
+                        $pdoStat = $db->prepare(
+                            "INSERT INTO meme
+                            (ME_image, ME_date)
+                            VALUES
+                            (:img, :dat)
+                            ");
+                        $pdoStat->bindValue(':img',  $message['urlImg'], PDO::PARAM_STR);
+                        $pdoStat->bindValue(':dat', time(), PDO::PARAM_STR);
+                        $pdoStat->execute();
+                        $id = $db->lastInsertId(); 
+
                     }// Si l'extension est bonne
                 }// error = 0  
-            }// !empty => files 
+            } // !empty => files 
             
             else{
+                    $message['urlImg'] = '';
                     $message['msg'] = 'Sélectionner une image ou extension incorrect';
                     $message['type'] = 'error';    
                 } 
 
-        $db = Database::getInstance();
-        $pdoStat = $db->prepare(
-       "INSERT INTO meme
-        (ME_image, ME_date)
-        VALUES
-        (:img, :dat)
-       ");
-        $pdoStat->bindValue(':img',  $message['urlImg'], PDO::PARAM_STR);
-        $pdoStat->bindValue(':dat', time(), PDO::PARAM_STR);
-        $pdoStat->execute();
-        $id = $db->lastInsertId(); 
+        
 
         return $message;
 
