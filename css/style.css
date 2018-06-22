@@ -1,3 +1,5 @@
+
+
 .raleway{font-family: "Raleway", sans-serif;}
 .bold{font-weight: 700;}
 .medium{font-weight: 500;}
@@ -8,6 +10,7 @@
 .fs-20{font-size: 20px;}
 .fs-30{font-size: 30px;}
 .fs-40{font-size: 40px;}
+.fs-80{font-size: 80px;}
 
 .h100vh{height:100vh;}
 .max-h-auto{max-height:auto;}
@@ -18,7 +21,6 @@
 
 .marge-left {margin-left : 10px;}
 
-.size-title {font-size: 5em;}
 .color-title {color: #E9E951;}
 .bg-button {background: #E9E951;}
 .bg-ft {background: #444;}
@@ -46,12 +48,40 @@
                             FONT ICON
 ============================================================== */
 
-.fa, .fas{color:#444;}
+.fa-color{color:#444;}
 
 
 /* Cacher la préview quand le meme est crée */
 
-.preview img:not([src]){
+img:not([src]){
     visibility: visible;
     display:none;
 }
+
+
+
+@media screen and (max-width: 1070px) {
+    .bloc {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+        text-align: center;
+    }
+    .text {
+        text-align: justify;
+    }
+  }
+
+  @media screen and (max-width: 960px) {
+    .bloc {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+        text-align: center;
+    }
+    .text {
+        text-align: justify;
+    }
+  }
