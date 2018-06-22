@@ -3,7 +3,7 @@
 class Router {
    public static function analyze( $query ) {
       $result = array(
-         "controller" => "Error",
+         "controller" => "error",
          "action" => "error404",
          "params" => array()
       );

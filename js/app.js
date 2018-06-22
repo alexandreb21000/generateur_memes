@@ -17,4 +17,3 @@ var loadFile = function(event) {
   UIkit.offcanvas(element).hide();
 
 
-
