@@ -55,6 +55,20 @@ img:not([src]){
     display:none;
 }
 
+@media screen and (max-width: 1240px) {
+
+    .bloc {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+        text-align: center;
+    }
+    .text {
+        text-align: justify;
+    }
+  }
+
   @media screen and (max-width: 640px) {
     .bloc {
       display: flex;
@@ -65,6 +79,12 @@ img:not([src]){
     }
     .text {
         text-align: justify;
+    }
+  }
+
+  @media screen and (min-width: 1070px) {
+    .m-left {
+      margin-left : 50px;
     }
   }
 
