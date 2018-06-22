@@ -3,14 +3,12 @@
 .medium{font-weight: 500;}
 .italic{font-style: italic;}
 
-.red{color: red;}
-
 .fs-20{font-size: 20px;}
 .fs-30{font-size: 30px;}
 .fs-40{font-size: 40px;}
+.fs-80{font-size: 80px;}
 
 .h100vh{height:100vh;}
-.max-h-auto{max-height:auto;}
 
 .block-img-h { height: 400px; }
 .block-img-w { width: 400px; }
@@ -18,7 +16,6 @@
 
 .marge-left {margin-left : 10px;}
 
-.size-title {font-size: 5em;}
 .color-title {color: #E9E951;}
 .bg-button {background: #E9E951;}
 .bg-ft {background: #444;}
@@ -51,7 +48,7 @@
 
 /* Cacher la préview quand le meme est crée */
 
-.preview img:not([src]){
+img:not([src]){
     visibility: visible;
     display:none;
 }

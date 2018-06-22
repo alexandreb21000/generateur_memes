@@ -9,9 +9,8 @@ class MemeController extends Controller {
         if(isset($_POST['submitForm'])){  
             $result = Meme::saveMeme();
             $message = $result;
-            
         }
-        
+
             $template = $this->twig->loadTemplate('/pages/display.html.twig');
             echo $template->render(array(
             'message' => $message['msg'],

@@ -17,21 +17,18 @@
         </div>
         
         <div class="uk-width-1-4 offset-1 uk-margin-large-left"> 
+
             {% if urlImg != '' %}
-                <img class="block-img-h block-img-w contain-img" src="img/{{ urlImg }}" />
-               
-            {%  endif %}        
-            <img class="block-img-h block-img-w contain-img" id="output"/>
-            {% if message.msg != '' %}
-                <h1 class="{{ type }}">{{ message }}</h1>
+                <img src="img/{{ urlImg }}" />
+            {%  endif %}
+
+            <img id="output"/>
+
+            {%  if message != "" %}
+                <h1 class="{{ type }} red">{{ message }}</h1>    
             {% endif %}
 
-                {%  if message != "" %}
-                    <h1 class="{{ type }} red">{{ message }}</h1>    
-                {% endif %}
-
-                    <img class="uk-width-1-1 max-h-auto preview" id="output">
-            </div>
+        </div>
          
         <div class="uk-width-1-4 uk-flex uk-flex-column uk-margin-large-left">
             <form method="POST" action="meme" enctype="multipart/form-data">
@@ -46,7 +43,7 @@
                 <input  type="text" id="texttop" name="texttop" placeholder="texttop">
                 <h3 class="uk-margin-remove-bottom uk-margin-small-top">Text bottom</h3>
                 <input type="text" id="textbottom" name="textbottom" placeholder="textbottom"> <br>
-                <input class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom uk-margin-top uk-text-bold color-button bg-button" type="submit" name="submitForm" value="GENERATE" >
+                <input class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom uk-margin-top uk-text-bold color-button bg-button" id="generatememe" type="submit" name="submitForm" value="GENERATE" >
                 {% if urlImg != '' %}
                     <a class="uk-button uk-button-default" href="#modal-sections" uk-toggle>Share</a>
                 {%  endif %}

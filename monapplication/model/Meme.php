@@ -225,10 +225,7 @@ class Meme extends MemeController {
                     $message['type'] = 'error';    
                 } 
 
-        
-
         return $message;
 
     }
-
 }
