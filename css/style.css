@@ -55,6 +55,28 @@ img:not([src]){
     display:none;
 }
 
+<<<<<<< HEAD
+=======
+
+
+<<<<<<< HEAD
+@media screen and (max-width: 1240px) {
+=======
+/* @media screen and (max-width: 1070px) {
+>>>>>>> f9e2c83a64a7c04f29c24565159f06b2aa0f96f7
+    .bloc {
+      display: flex;
+      flex-direction: column;
+    }
+    .title {
+        text-align: center;
+    }
+    .text {
+        text-align: justify;
+    }
+  } */
+
+>>>>>>> 057545a5e5c6935f557c37285882099760532424
   @media screen and (max-width: 640px) {
     .bloc {
       display: flex;
@@ -67,3 +89,11 @@ img:not([src]){
         text-align: justify;
     }
   }
+
+  @media screen and (min-width: 1070px) {
+    .m-left {
+      margin-left : 50px;
+    }
+  }
+
+
