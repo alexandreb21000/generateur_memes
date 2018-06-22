@@ -6,8 +6,8 @@
 
 {% block content  %}
 
-<div class="uk-flex uk-flex-middle uk-flex-wrap-between uk-background-default uk-height-large uk-container uk-width1-1 uk-margin-medium-top" uk-height-viewport="expand: true">
-        <div class="uk-width-1-4 uk-margin-large-left uk-flex">
+<div class=" title uk-flex uk-flex-middle uk-flex-wrap-between uk-background-default uk-height-large uk-container uk-width1-1 uk-margin-medium-top" uk-height-viewport="expand: true">
+        <div class="uk-width-1-4 uk-flex">
             <h1 class="uk-text-bold fs-80 color-title uk-flex-middle">
             CREATE </br>
             YOUR </br>
@@ -26,7 +26,7 @@
             <img class="uk-width-1-1 max-h-auto" id="output">
         </div>
          
-        <div class="uk-width-1-4 uk-flex uk-flex-column uk-margin-large-left">
+        <div class="uk-width-1-4 uk-flex uk-flex-column uk-margin-large-left ">
             <form method="POST" action="meme" enctype="multipart/form-data">
                     {% if message != '' %}
                         <h1 class= "fs-20 color-title {{ type }}">{{ message }}</h1>
