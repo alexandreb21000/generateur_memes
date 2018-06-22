@@ -3,12 +3,14 @@
 .medium{font-weight: 500;}
 .italic{font-style: italic;}
 
+.red{color: red;}
+
 .fs-20{font-size: 20px;}
 .fs-30{font-size: 30px;}
 .fs-40{font-size: 40px;}
 
 .h100vh{height:100vh;}
-
+.max-h-auto{max-height:auto;}
 
 .block-img-h { height: 400px; }
 .block-img-w { width: 400px; }
@@ -25,6 +27,8 @@
 
 .create {height: 500px;}
 
+.line-ft { border-top: 2px #444 solid;}
+.border-1{border: 1px solid #444;}
 
 /* ==============================================================
                             NAVBAR
@@ -38,15 +42,16 @@
 .uk-offcanvas-bar a:hover, .uk-offcanvas-bar .uk-close:hover
 {color:#E9E951;}
 
-.line-ft { border-top: 2px #444 solid }
-
 /* ==============================================================
                             FONT ICON
 ============================================================== */
 
 .fa, .fas{color:#444;}
 
-/* ==============================================================
-                            FIX FOOTER
-============================================================== */
 
+/* Cacher la préview quand le meme est crée */
+
+.preview img:not([src]){
+    visibility: visible;
+    display:none;
+}

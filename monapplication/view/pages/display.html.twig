@@ -26,8 +26,13 @@
                 <h1 class="{{ type }}">{{ message }}</h1>
             {% endif %}
 
-        </div>
-    
+                {%  if message != "" %}
+                    <h1 class="{{ type }} red">{{ message }}</h1>    
+                {% endif %}
+
+                    <img class="uk-width-1-1 max-h-auto preview" id="output">
+            </div>
+         
         <div class="uk-width-1-4 uk-flex uk-flex-column uk-margin-large-left">
             <form method="POST" action="meme" enctype="multipart/form-data">
                 <div uk-form-custom>
