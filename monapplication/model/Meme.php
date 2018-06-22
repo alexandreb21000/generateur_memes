@@ -17,11 +17,10 @@ class Meme extends MemeController {
         return $stmt->fetchAll();
     }
 
-    public static function saveMeme($name_db) {
+    public static function saveMeme() {
 
         $message = array();
         $nb_erreur = 0;
-        $saveMeme = '';
         $urlImg = '';
 
         if(!empty($_FILES)){
@@ -173,45 +172,39 @@ class Meme extends MemeController {
                         //Text
                         imagettftext($im, $font_size, $rotation, $start_x_offset_bot, $start_end_offset, $white, $font, $text_bot);
                         
-                       
-
                     //Envoi l'image à la destination souhaitée et libère la mémoire une fois envoyé.
-                        if(isset($_POST['submitForm'])){
-
-                            if(in_array($ext, $array_jpg)){
-                                imagejpeg($im,$directory);
-
-                            } elseif(in_array($ext, $array_gif)){
-                                imagegif($im,$directory);
-                               
-                            } elseif(in_array($ext, $array_png)){
-                                imagepng($im,$directory);
-                               
-                            } else { 
-                                $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
-                                $message['type'] = "error";
-                            } 
-                            
-                        }
-                       
-                        imagedestroy($im);
                         
-                        /* $saveMeme = Meme::saveMeme($file_name); */
-                        $message['urlImg'] = $file_name;
+                        if(in_array($ext, $array_jpg)){
+                            imagejpeg($im,$directory);
 
+                        } elseif(in_array($ext, $array_gif)){
+                            imagegif($im,$directory);
+                            
+                        } elseif(in_array($ext, $array_png)){
+                            imagepng($im,$directory);
+                            
+                        } else { 
+                            $message['msg'] = "Impossible de crée votre meme, veuillez changer le type de fichier";
+                            $message['type'] = "error";
+                        }    
+                    
+                        imagedestroy($im);
+
+                    // URL
+                        $message['urlImg'] = $file_name; 
+                
                     // Si upload message de succès.
                         $message['msg'] = "Votre image a bien été upload.";
                         $message['type'] = 'success';
-                    }
-                } else{
-                    $message['msg'] = 'Extension de fichier non pris en compte.';
-                    $message['type'] = 'error';
-                    
-                }
-            }  
-          
 
+                    }// Si l'extension est bonne
+                }// error = 0  
+            }// !empty => files 
             
+            else{
+                    $message['msg'] = 'Sélectionner une image ou extension incorrect';
+                    $message['type'] = 'error';    
+                } 
 
         $db = Database::getInstance();
         $pdoStat = $db->prepare(
