@@ -58,6 +58,7 @@
         <h2 class="uk-heading-divider uk-text-bold">TOOLS</h2>
         <h3>Upload your own image</h3>
 
+        
         <form method="POST" action="meme" enctype="multipart/form-data">
             {% if message != '' %}
                 <h5 class= "fs-20 color-title {{ type }}">{{ message }}</h5>
@@ -84,6 +85,7 @@
             <input class="uk-button uk-button-primary uk-width-1-1 uk-margin-small-bottom uk-margin-top uk-text-bold color-button bg-button" id="generatememe" type="submit" name="submitForm" value="GENERATE" >              
         </form>
 
+        <p class="uk-margin-medium-top uk-margin-medium-bottom">* Preview impossible sur les formats : Tablette / Téléphone </p>
 <!-- Problème à résoudre sur la preview sur mobile -->
         <!-- <img id="output"/> -->
 
