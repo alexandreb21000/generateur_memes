@@ -80,6 +80,7 @@ img:not([src]){
     .text {
         text-align: justify;
     }
+    
   }
 
   @media screen and (min-width: 1070px) {
